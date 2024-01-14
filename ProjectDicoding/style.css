@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: m;
+
+    background: #f5f5f5;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    width: 100vw;
+    min-height: 10vh;
+    padding: 0 30px;
+}
+
+header .logo img {
+    width: 60%;
+    height: auto;
+}
+
+header .navigation ul {
+    display: flex;    
+    list-style: none;
+    column-gap: 30px;
+}
+
+header ul a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    transition: font-weight .5s ease;
+}
+
+header ul a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+header ul a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+header ul a:hover {
+    font-weight: 900;
+    /* transform: scale(1.1); */
+}
+
+/* Content */
+#landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    min-height: 80vh;
+
+    position: relative;
+    z-index: 1;    
+    background: url(./picture/background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#landing-page::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: .6;
+    z-index: -1;
+}
+
+#landing-page img {
+    filter: invert(1);
+    width: auto;
+    height: auto;
+    margin-bottom: 1px;
+}
+
+#landing-page p {
+    width: 80%;
+    height: auto;
+
+    text-align: center;
+    color: white;
+
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+#landing-page a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+
+    width: 145px;
+
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+
+    border: 2px solid white;
+    padding: 8px;
+
+    transition: .5s ease;
+}
+
+#landing-page a svg {
+    filter: invert(1);
+    transition: filter .5s ease;
+}
+
+#landing-page a:hover svg {
+    filter: invert(0);
+}
+
+#landing-page a:hover {
+    width: 160px;
+    
+    background: white;
+    border: 3px solid rgb(179, 75, 6);
+    color: black;
+}
+
+/* About */
+
+#about {
+    width: 100vw;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 70%;
+    height: auto;
+    margin: 100px 50px;
+
+    border-radius: 0px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+}
+
+#about .desc {
+    padding: 0 20px;
+}
+
+#about .desc h1 {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+}
+
+#about .desc p {
+    font-family: 'Reem Kufi',sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+#about .badge{
+    width: 100vw;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-bottom: 100px;
+}
+#about .badge1,
+#about .badge2,
+#about .badge3 {
+    width: 30%;
+    height: auto;
+    padding: 10px;
+}
+
+#about .top {
+    text-align: center;
+    font-family: 'Reem Kufi',sans-serif;
+    text-transform: uppercase;
+    
+    margin-bottom: 20px;
+}
+
+#about .top img {
+    margin-bottom: 5px;
+}
+
+#about .body {
+    text-align: center;
+    font-family: 'Reem Kufi',sans-serif;
+    padding: 10px;
+}
+
+/* Menu */
+#menu {
+    width: 100vw;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu h1 {
+    font-family: 'Reem Kufi',sans-serif;
+    border-bottom: 2px solid black;
+
+    margin-bottom: 100px;
+}
+
+.swiper {
+    width: 100vw;
+    height: 100%;
+    margin-bottom: 100px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+/* Aside */
+
+#contact {
+    width: 100vw;
+    min-height: 50vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#contact .card {
+    width: 385px;
+    height: 500px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-radius: 0px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+
+    margin-bottom: 100px;
+}
+
+#contact .profile img {
+    margin-bottom: 20px;
+}
+
+#contact .profile {
+    text-align: center;
+    
+    font-family: 'Reem Kufi',sans-serif;
+}
+
+#contact .about-me {
+    text-align: center;
+    font-family: 'Reem Kufi',sans-serif;
+}
+
+#contact .about-me span {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+/* Footer */
+footer {
+    width: 100vw;
+    min-height: 8vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #000;
+    color: white;
+
+    font-family: 'Reem Kufi',sans-serif;
+    padding: 20px 20px;
+}
+
+footer .logo {
+    width: 30%;
+    height: auto;
+
+    margin-bottom: 20px;
+    filter: invert(1);
+}
+
+footer .medsos {
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .medsos a {
+    margin-right: 20px;
+}
+
+footer .medsos img {
+    width: 100%;
+    height: auto;
+
+    filter: invert(1);
+}
+
+footer p {
+    text-align: center;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px){
+    #about .card {
+        flex-direction: column;
+        width: auto;
+    }
+    
+    #about .desc {
+        padding: 20px;
+    }
+
+    #about .badge {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #about .badge1,
+    #about .badge2,
+    #about .badge3 {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    header .navigation ul {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+
+        top: 0;
+        left: -100%;
+
+        background: #f5f5f5;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        column-gap: 0;
+        row-gap: 30px;
+        transition: left .5s ease;
+    }
+
+    header .navigation ul.active {
+        left: 0;
+    }
+
+    header .navigation .hamburger {
+        width: 30px;
+        height: auto;
+        z-index: 1100;
+        margin: 0 20px;
+        cursor: pointer;
+    }
+
+    header .navigation .hamburger .bar {
+        position: relative;
+        background-color: black;
+        width: 30px;
+        height: 3px;
+    }
+    header .navigation .hamburger .bar::after,
+    header .navigation .hamburger .bar::before {
+        content: '';
+        position: absolute;
+        background-color: black;
+        width: 30px;
+        height: 3px;
+    }
+    header .navigation .hamburger .bar::after {
+        top: 8px;
+    }
+    header .navigation .hamburger .bar::before {
+        bottom: 8px;
+    }
+
+    header .navigation ul.active {
+        right: 0;
+    }
+
+    header .navigation ul li a {
+        font-size: 1.3rem;
+    }
+}
